@@ -1,0 +1,53 @@
+<html>
+    <head>
+        <title>Form Edit Data Surat Keluar</title>
+
+        <script src="./js/angular.min.js"></script>
+        <link rel="stylesheet" href="./bootstrap/css/bootstrap.min.css" />
+
+        <script src="./js/surat-keluar-angular.js"></script>
+        <script src="./js/edit-controller.js"></script>
+        
+    </head>
+    <body class="container" ng-app="SuratKeluarAngular">
+        <div class="jumbotron">
+            <h1>EDIT DATA SURAT KELUAR</h1>
+        </div>
+
+        <div ng-controller="EditController">
+            <form>
+                <div class="form-group row">
+                    <label class="col-sm-2 col-form-label">ID</label>
+                    <input type="text" class="col-sm-4 form-control"
+                            placeholder="ID" ng-model="surat.id"
+                            readonly="true" />
+                </div>
+                <div class="form-group row">
+                    <label class="col-sm-2 col-form-label">TANGGAL SURAT KELUAR</label>
+                    <input type="text" class="col-sm-4 form-control" 
+                            placeholder="TANGGAL" ng-model="surat.tgl_surat" />
+                </div>
+                <div class="form-group row">
+                    <label class="col-sm-2 col-form-label">JUDUL</label>
+                    <input type="text" class="col-sm-4 form-control" 
+                            placeholder="JUDUL" ng-model="surat.judul" />
+                </div>
+                <div class="form-group row">
+                    <label class="col-sm-2 col-form-label">TUJUAN</label>
+                    <input type="text" class="col-sm-4 form-control" 
+                            placeholder="TUJUAN" ng-model="surat.tujuan" />
+                </div>
+                <div class="form-group row">
+                    <button class="btn btn-primary col-pr-2" 
+                            ng-click="simpan()">
+                        Simpan
+                    </button>
+                    <button class="btn btn-warning col-sm-2" 
+                            ng-click="batal()">
+                        Batal
+                    </button>
+                </div>
+            </form>
+        </div>
+    </body>
+</html>

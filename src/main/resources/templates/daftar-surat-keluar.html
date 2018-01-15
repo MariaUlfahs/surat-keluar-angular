@@ -1,0 +1,61 @@
+<html>
+    <head>
+        <title>Daftar Surat Keluar</title>
+
+        <script src="./js/angular.min.js"></script>
+        <link rel="stylesheet" href="./bootstrap/css/bootstrap.min.css" />
+
+        <script src="./js/surat-keluar-angular.js"></script>
+        <script src="./js/daftar-controller.js"></script>
+    </head>
+    <body class="container">
+        <div class="jumbotron">
+            <h1>DAFTAR SURAT KELUAR</h1>
+        </div>
+        <div ng-app="SuratKeluarAngular">
+            <div ng-controller="DaftarController">
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>Tanggal Surat</th>
+                            <th>Judul</th>
+                            <th>Tujuan</th>
+                       
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr ng-repeat="surat in daftarSurat">
+                            <td>{{ surat.id }}</td>
+                            <td>{{ surat.tgl_surat }}</td>
+                            <td>{{ surat.judul }}</td>
+                            <td>{{ surat.tujuan }}</td>
+                            <td>
+                                <button class="btn btn-warning"
+                                        ng-click="edit(surat)">
+                                    Ubah
+                                </button>
+                            </td>
+                            <td>
+                                <button class="btn btn-danger"
+                                        ng-click="delete(surat)">
+                                    Hapus
+                                </button>
+                            </td>
+                        </tr>
+                    </tbody>
+                    <tfoot>
+                        <tr>
+                            <td>
+                                <button class="btn btn-primary"
+                                        ng-click="tambah()">
+                                    Tambah
+                                </button>
+                            </td>
+                        </tr>
+                    </tfoot>
+                </table>
+            </div>
+        </div>
+    </body>
+</html>

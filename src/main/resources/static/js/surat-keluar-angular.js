@@ -1,0 +1,1 @@
+var suratKeluarAngular = angular.module('SuratKeluarAngular', []);
